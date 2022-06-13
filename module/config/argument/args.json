@@ -6514,13 +6514,11 @@
   "Commission": {
     "Scheduler": {
       "Enable": {
-        "type": "lock",
+        "type": "checkbox",
         "value": true,
         "option": [
-          true
-        ],
-        "option_bold": [
-          true
+          true,
+          false
         ]
       },
       "NextRun": {
@@ -6677,13 +6675,11 @@
   "Research": {
     "Scheduler": {
       "Enable": {
-        "type": "lock",
+        "type": "checkbox",
         "value": true,
         "option": [
-          true
-        ],
-        "option_bold": [
-          true
+          true,
+          false
         ]
       },
       "NextRun": {
@@ -7031,13 +7027,11 @@
   "Reward": {
     "Scheduler": {
       "Enable": {
-        "type": "lock",
+        "type": "checkbox",
         "value": true,
         "option": [
-          true
-        ],
-        "option_bold": [
-          true
+          true,
+          false
         ]
       },
       "NextRun": {

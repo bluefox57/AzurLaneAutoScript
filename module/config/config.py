@@ -118,7 +118,7 @@ class AzurLaneConfig(ConfigUpdater, ManualConfig, GeneratedConfig, ConfigWatcher
 
     def load(self):
         self.data = self.read_file(self.config_name)
-        self.config_override()
+        # self.config_override()
 
         for path, value in self.modified.items():
             deep_set(self.data, keys=path, value=value)
@@ -266,7 +266,7 @@ class AzurLaneConfig(ConfigUpdater, ManualConfig, GeneratedConfig, ConfigWatcher
 
     def update(self):
         self.load()
-        self.config_override()
+        # self.config_override()
         self.bind(self.task)
         self.save()
 
