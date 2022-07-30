@@ -621,7 +621,7 @@ class Connection(ConnectionAttr):
                 logger.info(f'{device.serial} ({device.status})')
 
         # Auto device detection
-        if self.config.Emulator_Serial == 'auto':
+        if self.config.Emulator_Serial.strip() == 'auto':
             if available.count == 0:
                 logger.critical('No available device found, auto device detection cannot work, '
                                 'please set an exact serial in Alas.Emulator.Serial instead of using "auto"')
