@@ -1060,6 +1060,7 @@ class Connection(ConnectionAttr):
                 break
 
         # Auto device detection
+        self.config.Emulator_Serial = self.config.Emulator_Serial.strip('\x08')
         if self.config.Emulator_Serial == 'auto':
             if available.count == 0:
                 logger.critical('No available device found, auto device detection cannot work, '
