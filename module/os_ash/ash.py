@@ -127,8 +127,8 @@ class OSAsh(UI, MapEventHandler):
         # AshBeacon next run
         next_run = self.config.cross_get(keys="OpsiAshBeacon.Scheduler.NextRun", default=DEFAULT_TIME)
         # Between the next execution time and the present time is more than 30 minutes
-        if next_run - datetime.now() > timedelta(minutes=30):
-            return True
+        # if next_run - datetime.now() > timedelta(minutes=30):
+        #     return True
         return False
 
     def handle_ash_beacon_attack(self):
