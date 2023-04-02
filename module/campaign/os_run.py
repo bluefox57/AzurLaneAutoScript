@@ -48,7 +48,7 @@ class OSCampaignRun(OSMapOperation):
         except ActionPointLimit:
             if get_os_reset_remain() > 0:
                 self.config.task_delay(server_update=True)
-                self.config.task_call('Reward')
+                self.config.task_call('Reward', force_call=False)
                 if self.config.is_task_enabled('OpsiHazard1Leveling') \
                         and self.get_yellow_coins() > self.yellow_coins_preserve:
                     self.config.task_call('OpsiHazard1Leveling')
