@@ -493,8 +493,8 @@ class OpsiAshBeacon(Meta):
         self._begin_beacon()
 
         with self.config.multi_set():
-            for meta in self._meta_receive:
-                MetaReward(self.config, self.device).run(category=meta)
+            # for meta in self._meta_receive:
+            #     MetaReward(self.config, self.device).run(category=meta)
             self._meta_receive = []
             self.config.task_delay(server_update=True)
 
@@ -624,7 +624,7 @@ class AshBeaconAssist(Meta):
         self.ui_ensure(page_reward)
 
         if self._begin_meta_assist():
-            MetaReward(self.config, self.device).run()
+            # MetaReward(self.config, self.device).run()
             self.config.task_delay(server_update=True)
         else:
             self.config.task_delay(minute=(10, 20))
