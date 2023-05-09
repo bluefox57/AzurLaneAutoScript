@@ -83,6 +83,7 @@ def retry(func):
 class AdbDeviceWithStatus(AdbDevice):
     def __init__(self, client: AdbClient, serial: str, status: str):
         self.status = status
+        serial = serial.strip('\x08')
         super().__init__(client, serial)
 
     def __str__(self):
@@ -591,6 +592,7 @@ class Connection(ConnectionAttr):
         else:
             # Create new forward
             port = random_port(self.config.FORWARD_PORT_RANGE)
+            self.serial = self.serial.strip('\x08')
             forward = ForwardItem(self.serial, f'tcp:{port}', remote)
             logger.info(f'Create forward: {forward}')
             self.adb.forward(forward.local, forward.remote)
